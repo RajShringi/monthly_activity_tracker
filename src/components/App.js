@@ -79,6 +79,13 @@ class App extends React.Component {
       allActivities,
     });
   };
+  handleDelete = (activity) => {
+    let allActivities = this.state.allActivities;
+    allActivities = allActivities.filter((a) => a.name !== activity);
+    this.setState({
+      allActivities,
+    });
+  };
   render() {
     return (
       <div className="container mx-auto text-gray-700">
@@ -97,6 +104,7 @@ class App extends React.Component {
             allActivities={this.state.allActivities}
             currentMonth={moment().format("MMMM")}
             trackDays={this.trackDays}
+            handleDelete={this.handleDelete}
           />
         </main>
       </div>

@@ -1,6 +1,6 @@
 function Activity(props) {
   return (
-    <div className="flex justify-between items-center my-8 shadow-md p-4 rounded-lg">
+    <div className="flex justify-between items-start my-8 shadow-md p-4 rounded-lg">
       <div className="basis-[30%]  bg-slate-50 self-stretch flex justify-center items-center">
         <div className="text-center">
           <h2 className="font-bold text-2xl">{props.activity.name}</h2>
@@ -21,6 +21,14 @@ function Activity(props) {
             {day.value}
           </button>
         ))}
+      </div>
+      <div>
+        <button
+          onClick={() => props.handleDelete(props.activity.name)}
+          className="bg-red-400 text-white w-[30px] h-[30px] rounded-full self-start"
+        >
+          X
+        </button>
       </div>
     </div>
   );

@@ -10,6 +10,7 @@ function AllActivities(props) {
             activity={activity}
             currentMonth={props.currentMonth}
             trackDays={props.trackDays}
+            handleDelete={props.handleDelete}
           />
         );
       })}
