@@ -13,7 +13,7 @@ function AddActivity(props) {
         onChange={props.handleInput}
       />
       <button
-        className="text-slate-200 bg-teal-400 py-2 px-3 rounded-br-lg rounded-tr-lg font-light border border-teal-400 hover:bg-teal-500 hover:border-teal-500"
+        className="text-slate-50 bg-teal-400 py-2 px-3 rounded-br-lg rounded-tr-lg font-light border border-teal-400 hover:bg-teal-500 hover:border-teal-500"
         type="submit"
       >
         Add Activity
