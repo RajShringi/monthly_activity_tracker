@@ -10,6 +10,23 @@ class App extends React.Component {
       allActivities: [],
     };
   }
+  handleUpdateLocalStorage = () => {
+    localStorage.setItem(
+      "allActivities",
+      JSON.stringify(this.state.allActivities) || []
+    );
+  };
+  componentDidMount() {
+    if (localStorage.allActivities) {
+      this.setState({
+        allActivities: JSON.parse(localStorage.allActivities),
+      });
+    }
+    window.addEventListener("beforeunload", this.handleUpdateLocalStorage);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("beforeunload", this.handleUpdateLocalStorage);
+  }
   handleInput = (e) => {
     this.setState({
       activity: e.target.value,
